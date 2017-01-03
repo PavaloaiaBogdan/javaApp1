@@ -1,29 +1,29 @@
 package application;
-	
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
-
+import javafx.stage.Stage;
 
 public class Main extends Application {
-	@Override
-	public void start(Stage primaryStage) {
-		try {
-//			BorderPane root = new BorderPane();
-			Parent root = FXMLLoader.load(getClass().getResource("/application/MainPanel.fxml"));
-			Scene scene = new Scene(root);
-//			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			primaryStage.setScene(scene);
-			primaryStage.show();
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
-	}
-	
-	public static void main(String[] args) {
-		launch(args);
-	}
+
+    private Parent rootNode;
+
+    public static void main(final String[] args) {
+        Application.launch(args);
+    }
+
+    @Override
+    public void init() throws Exception {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/compression/view/Main.fxml"));
+        rootNode = fxmlLoader.load();
+    }
+
+    @Override
+    public void start(Stage stage) throws Exception {
+        stage.setScene(new Scene(rootNode));
+        stage.show();
+    }
+
 }
