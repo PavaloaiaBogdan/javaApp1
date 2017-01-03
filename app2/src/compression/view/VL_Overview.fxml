@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="root" prefHeight="500.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="compression.model.LZ78OverviewController">
+<AnchorPane fx:id="root" prefHeight="500.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="compression.model.VL_OverviewController">
    <children>
       <BorderPane layoutX="-8.0" prefHeight="400.0" prefWidth="650.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
@@ -23,9 +23,9 @@
                       </Menu>
                       <Menu mnemonicParsing="false" text="Edit">
                         <items>
-                          <MenuItem fx:id="men1" mnemonicParsing="false" onAction="#handleMenuAction" text="Scene1" />
-                              <MenuItem fx:id="men2" mnemonicParsing="false" onAction="#handleMenuAction" text="Scene2" />
-                              <MenuItem fx:id="men3" mnemonicParsing="false" onAction="#handleMenuAction" text="Scene3" />
+                          <MenuItem fx:id="layout_LZ" mnemonicParsing="false" onAction="#handleMenuAction" text="LZ Algorithms" />
+                              <MenuItem fx:id="layout_RLE" mnemonicParsing="false" onAction="#handleMenuAction" text="RLE Algorithms" />
+                              <MenuItem fx:id="layout_VL" mnemonicParsing="false" onAction="#handleMenuAction" text="VL Algorithms" />
                         </items>
                       </Menu>
                       <Menu mnemonicParsing="false" text="Help">
@@ -67,7 +67,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Label text="lz78 scene" />
+                        <Label text="vl scene" />
                     </items>
                   </ToolBar>
                </children>

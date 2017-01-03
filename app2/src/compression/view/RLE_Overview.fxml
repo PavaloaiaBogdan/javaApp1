@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="root" prefHeight="500.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="compression.model.MainController">
+<AnchorPane fx:id="root" prefHeight="500.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="compression.model.RLE_OverviewController">
    <children>
       <BorderPane layoutX="-8.0" prefHeight="400.0" prefWidth="650.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
@@ -67,6 +67,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
+                        <Label text="rle scene" />
                     </items>
                   </ToolBar>
                </children>

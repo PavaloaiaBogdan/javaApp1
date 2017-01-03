@@ -1,39 +1,34 @@
 package compression.model;
 
-import java.awt.MenuBar;
 import java.io.IOException;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.MenuItem;
 import javafx.stage.Stage;
 
-public class MainController {
+public class RLE_OverviewController {
 
-	@FXML
-	MenuItem layout_LZ;
-	@FXML
-	MenuItem layout_RLE;
-	@FXML
-	MenuItem layout_VL;
-	@FXML
-	Button openFileButton;
-	@FXML
-	Button compressFileButton;
-	@FXML
-	Button decompressFileButton;
-
-	@FXML
-	private void initialize() {
-
-	}
-
-	@FXML
+	@FXML MenuItem layout_LZ;
+	@FXML MenuItem layout_RLE;
+	@FXML MenuItem layout_VL;
+	@FXML Button openFileButton;
+	@FXML Button compressFileButton;
+	@FXML Button decompressFileButton;
+	
+    @FXML private void initialize() {
+  
+    }
+    /*
+     * For switching between scenes using the MenuItems 
+     * Getting current scene from open file button because MenuItem isn't a node
+     * and doesn't have the .getScene() method
+     */
+    @FXML
 	private void handleMenuAction(ActionEvent event) throws IOException {
 		Stage stage = null;
 		Parent root = null;
@@ -55,4 +50,6 @@ public class MainController {
 		stage.show();
 	}
 
+
+   
 }
