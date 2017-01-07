@@ -18,7 +18,7 @@ public class Main extends Application {
 
     @Override
     public void init() throws Exception {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/compression/view/MainOverview.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/application/view/MainOverview.fxml"));
         rootNode = fxmlLoader.load();
        
     }

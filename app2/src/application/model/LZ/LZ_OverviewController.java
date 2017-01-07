@@ -1,4 +1,4 @@
-package compression.model.LZ;
+package application.model.LZ;
 
 import java.io.IOException;
 
@@ -28,7 +28,6 @@ public class LZ_OverviewController {
 	@FXML BorderPane lz_borderpane;
 	@FXML Pane lz_centerpane;
 	
-	
     @FXML private void initialize() {
     	 ObservableList<String> algorithms = FXCollections.observableArrayList("Lempel-Ziv 1977 (LZ77)", "Lempel-Ziv 1978 (LZ78)", "Lempel–Ziv–Welch (LZW)");
     	 lz_algorithm_list.setItems(algorithms);
@@ -43,21 +42,16 @@ public class LZ_OverviewController {
         }
         if(selectedItem=="Lempel-Ziv 1977 (LZ77)"){
         	lz_borderpane.setCenter(null);
-        	Node activeNode = FXMLLoader.load(getClass().getResource("/compression/view/LZ/LZ77.fxml"));
+        	Node activeNode = FXMLLoader.load(getClass().getResource("/application/view/LZ/LZ77.fxml"));
         	lz_borderpane.setCenter(activeNode);
         }else if(selectedItem=="Lempel-Ziv 1978 (LZ78)"){
         	lz_borderpane.setCenter(null);
-        	Node activeNode = FXMLLoader.load(getClass().getResource("/compression/view/LZ/LZ78.fxml"));
+        	Node activeNode = FXMLLoader.load(getClass().getResource("/application/view/LZ/LZ78.fxml"));
         	lz_borderpane.setCenter(activeNode);
         }else if(selectedItem=="Lempel–Ziv–Welch (LZW)"){
         	lz_borderpane.setCenter(null);
-        	Node activeNode = FXMLLoader.load(getClass().getResource("/compression/view/LZ/LZW.fxml"));
+        	Node activeNode = FXMLLoader.load(getClass().getResource("/application/view/LZ/LZW.fxml"));
         	lz_borderpane.setCenter(activeNode);
         }
-        
-        	
     }
-    
-    
-	
 }

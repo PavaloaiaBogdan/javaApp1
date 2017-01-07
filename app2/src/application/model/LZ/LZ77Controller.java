@@ -1,10 +1,11 @@
-package compression.model.LZ;
+package application.model.LZ;
 
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
+import CompressionAlgorithms.LZ.LZ77.LZ77;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -22,17 +23,23 @@ public class LZ77Controller {
 	@FXML TextArea leftTextArea;
 	@FXML TextArea rightTextArea;
 	
+	private boolean encodeFlag=true;
 	
 	public void initialize(){
 		leftTextArea.setWrapText(true);
 		rightTextArea.setWrapText(true);
 		
-		//let TextBoxArea listener 
+		//listener for input text
 		leftTextArea.textProperty().addListener(new ChangeListener<String>() {
 		    @Override
 		    public void changed(ObservableValue<? extends String> observable,
 		    		String oldValue, String newValue) {
-		    		rightTextArea.setText(leftTextArea.getText());		    		
+		    	if(encodeFlag==true){
+		    		rightTextArea.setText((new CompressionAlgorithms.LZ.LZ77.LZ77Encoder(leftTextArea.getText())).getCompressedText());
+		    	}else{
+		    		rightTextArea.setText((new CompressionAlgorithms.LZ.LZ77.LZ77Decoder(leftTextArea.getText())).getOutput());	
+		    	}
+		    			    		
 		    }
 		});
 		
@@ -40,13 +47,16 @@ public class LZ77Controller {
 	
 	public void openFile(ActionEvent event) throws IOException{
 		FileChooser fc = new FileChooser();
-		File selectedFile = fc.showOpenDialog(null);
+		fc.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("Text Files", "*.txt*")
+//                new FileChooser.ExtensionFilter("JPG", "*.jpg"),
+//                new FileChooser.ExtensionFilter("PNG", "*.png")
+            );
 		
-//		File selectedFile = new File("C:\\Users\\Bogdan\\Desktop\\test.txt");
+		File selectedFile = fc.showOpenDialog(null);
 		if(selectedFile!=null){
 			leftTextArea.clear();
 			rightTextArea.clear();
-			//System.out.println(selectedFile.getAbsolutePath());
 			for (String line : Files.readAllLines(Paths.get(selectedFile.getAbsolutePath()))) {
 			    leftTextArea.appendText(line+"\n");
 			}
@@ -55,8 +65,13 @@ public class LZ77Controller {
 		}
 	}
 	
-	public void onMouseClicked(MouseEvent event){
-		rightTextArea.setText((new CompressionAlgorithms.LZ.LZ77.LZ77Encoder(leftTextArea.getText())).getCompressedText());
-		
+	public void compressButtonClicked(MouseEvent event){
+		encodeFlag = true;
+		rightTextArea.setText(LZ77.encode(leftTextArea.getText()));
+	}
+	
+	public void decompressButtonClicked(MouseEvent event){
+		encodeFlag = false;
+		rightTextArea.setText(LZ77.decode(leftTextArea.getText()));
 	}
 }

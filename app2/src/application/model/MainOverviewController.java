@@ -1,4 +1,4 @@
-package compression.model;
+package application.model;
 
 import java.awt.MenuBar;
 import java.io.IOException;
@@ -37,18 +37,18 @@ public class MainOverviewController {
 		Stage stage = null;	
 		if (event.getSource() == layout_LZ) {
 			mainBorderPane.setCenter(null);
-			Node temp = FXMLLoader.load(getClass().getResource("/compression/view/LZ/LZ_Overview.fxml"));
+			Node temp = FXMLLoader.load(getClass().getResource("/application/view/LZ/LZ_Overview.fxml"));
 			mainBorderPane.setCenter(temp);
 			stage=(Stage) mainBorderPane.getScene().getWindow();
 			stage.setTitle("LZ Compression");	
 		} else if (event.getSource() == layout_RLE) {
 			mainBorderPane.setCenter(null);
-			Node temp = FXMLLoader.load(getClass().getResource("/compression/view/RLE/RLE_Overview.fxml"));
+			Node temp = FXMLLoader.load(getClass().getResource("/application/view/RLE/RLE_Overview.fxml"));
 			mainBorderPane.setCenter(temp);
 			stage=(Stage) mainBorderPane.getScene().getWindow();
 			stage.setTitle("RLE Compression");
 		} else if (event.getSource() == layout_VL) {
-			Node temp = FXMLLoader.load(getClass().getResource("/compression/view/VL/VL_Overview.fxml"));
+			Node temp = FXMLLoader.load(getClass().getResource("/application/view/VL/VL_Overview.fxml"));
 			mainBorderPane.setCenter(temp);
 			stage=(Stage) mainBorderPane.getScene().getWindow();
 			stage.setTitle("VL Compression");

@@ -1,4 +1,4 @@
-package compression.model.VL;
+package application.model.RLE;
 
 import java.io.IOException;
 
@@ -11,8 +11,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.MenuItem;
 import javafx.stage.Stage;
 
-public class VL_OverviewController {
-	
+public class RLE_OverviewController {
+
 	@FXML Button openFileButton;
 	@FXML Button compressFileButton;
 	@FXML Button decompressFileButton;
@@ -21,4 +21,5 @@ public class VL_OverviewController {
   
     }
 
+   
 }

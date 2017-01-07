@@ -1,4 +1,4 @@
-package compression.model.LZ;
+package application.model.LZ;
 
 public class LZWController {
 
