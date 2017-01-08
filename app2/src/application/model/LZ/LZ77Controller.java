@@ -35,9 +35,9 @@ public class LZ77Controller {
 		    public void changed(ObservableValue<? extends String> observable,
 		    		String oldValue, String newValue) {
 		    	if(encodeFlag==true){
-		    		rightTextArea.setText((new CompressionAlgorithms.LZ.LZ77.LZ77Encoder(leftTextArea.getText())).getCompressedText());
+		    		rightTextArea.setText(LZ77.encode(leftTextArea.getText()));
 		    	}else{
-		    		rightTextArea.setText((new CompressionAlgorithms.LZ.LZ77.LZ77Decoder(leftTextArea.getText())).getOutput());	
+		    		rightTextArea.setText(LZ77.decode(leftTextArea.getText()));	
 		    	}
 		    			    		
 		    }

@@ -11,10 +11,10 @@ public class Main extends Application {
 
     private Parent rootNode;
    
-
-    public static void main(final String[] args) {
-        Application.launch(args);
-    }
+//
+//    public static void main(final String[] args) {
+//        Application.launch(args);
+//    }
 
     @Override
     public void init() throws Exception {
